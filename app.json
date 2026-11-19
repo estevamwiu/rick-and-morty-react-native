@@ -2,6 +2,8 @@
   "expo": {
     "name": "rick-and-morty-app",
     "slug": "rick-and-morty-app",
+    "scheme": "rick-and-morty-app",
+    "plugins": ["expo-router"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
