@@ -19,14 +19,21 @@ export default function LocationsScreen() {
       keyExtractor={(item) => String(item.id)}
       onEndReached={loadMore}
       onEndReachedThreshold={0.5}
-      renderItem={({ item }) => (
-        <View style={styles.card}>
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.sub}>Tipo: {item.type || 'Desconhecido'}</Text>
-          <Text style={styles.sub}>Dimensão: {item.dimension || 'Desconhecida'}</Text>
-          <Text style={styles.sub}>{item.residents.length} residentes</Text>
-        </View>
-      )}
+      renderItem={({ item }) => {
+        const dimension = item.dimension?.trim();
+        const dimensionLabel = !dimension || /^(unknown|unkdown)$/i.test(dimension)
+          ? 'Desconhecida'
+          : dimension;
+
+        return (
+          <View style={styles.card}>
+            <Text style={styles.name}>{item.name}</Text>
+            <Text style={styles.sub}>Tipo: {item.type || 'Desconhecido'}</Text>
+            <Text style={styles.sub}>Dimensão: {dimensionLabel}</Text>
+            <Text style={styles.sub}>{item.residents.length} residentes</Text>
+          </View>
+        );
+      }}
       ListFooterComponent={
         loadingMore ? <ActivityIndicator color={colors.primary} style={{ margin: 16 }} /> : null
       }

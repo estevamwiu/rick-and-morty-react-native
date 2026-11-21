@@ -5,6 +5,30 @@ import { usePaginated } from '../hooks';
 import { Loading, ErrorView } from '../components/StateViews';
 import { colors } from '../theme';
 
+const monthsInPortuguese = new Map([
+  ['January', 'janeiro'],
+  ['February', 'fevereiro'],
+  ['March', 'março'],
+  ['April', 'abril'],
+  ['May', 'maio'],
+  ['June', 'junho'],
+  ['July', 'julho'],
+  ['August', 'agosto'],
+  ['September', 'setembro'],
+  ['October', 'outubro'],
+  ['November', 'novembro'],
+  ['December', 'dezembro'],
+]);
+
+function formatAirDate(airDate) {
+  const match = /^([A-Za-z]+) (\d{1,2}), (\d{4})$/.exec(airDate);
+  if (!match) return airDate;
+
+  const [, month, day, year] = match;
+  const translatedMonth = monthsInPortuguese.get(month);
+  return translatedMonth ? `${Number(day)} de ${translatedMonth} de ${year}` : airDate;
+}
+
 export default function EpisodesScreen() {
   const { items, loading, loadingMore, error, loadMore, reload } = usePaginated(getEpisodes);
 
@@ -23,7 +47,7 @@ export default function EpisodesScreen() {
         <View style={styles.card}>
           <Text style={styles.code}>{item.episode}</Text>
           <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.sub}>Exibido em {item.air_date}</Text>
+          <Text style={styles.sub}>Exibido em {formatAirDate(item.air_date)}</Text>
           <Text style={styles.sub}>{item.characters.length} personagens</Text>
         </View>
       )}
