@@ -11,12 +11,14 @@ Atividade bimestral 2.
 
 ## Capturas de Tela
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b96bfcf7-0997-4cfb-8b40-ea05ba71398d" width="22%" />
-  <img src="https://github.com/user-attachments/assets/4892a3e2-9aa7-472e-a9e9-4cbb9e7f3c65" width="22%" />
-  <img src="https://github.com/user-attachments/assets/ab61da16-49f7-40b2-9af3-25497e755637" width="22%" />
-  <img src="https://github.com/user-attachments/assets/8a59a0be-6892-44aa-aa9c-ce60c2274a0d" width="22%" />
-</p>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/7459c703-e879-4bf2-9e17-85ce78d64738" width="200" height="420" /></td>
+    <td><img src="https://github.com/user-attachments/assets/3b43a086-f149-4436-a5f9-377b5f6ca990" width="200" height="420" /></td>
+    <td><img src="https://github.com/user-attachments/assets/997a9a37-0b68-4ca1-8e3e-126db9baaafe" width="200" height="420" /></td>
+    <td><img src="https://github.com/user-attachments/assets/5734e27e-5514-4e78-8a87-cb75bd5a70e2" width="200" height="420" /></td>
+  </tr>
+</table>
 
 ## Tecnologias
 
